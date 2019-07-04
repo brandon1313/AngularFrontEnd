@@ -1,0 +1,21 @@
+h3{
+    text-align: center;
+}
+
+.card{
+    margin-top: 5%;
+    width: 40%;
+    position: relative;
+    margin-left: 25%;
+    align-content: center;
+    
+}
+.card-body{
+    position: relative;
+    
+    align-content: center;
+}
+form{
+    position: relative;
+    align-content: center;
+}

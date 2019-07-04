@@ -1,0 +1,54 @@
+<div class="card" style="margin-top: 10px">
+  <div class="card-header">
+    <h2>Regularizacion Paquetes en Tienda</h2>
+  </div>
+  <div class="card-body">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="input-group  mb-3" style="width: 30%;">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Ticket</span>
+          </div>
+          <input  type="text"  id="ticket" 
+           class="form-control" (change)="setTicket($event.target.value)" #ticket="ngModel" name="ticket" [(ngModel)]="form.ticket"> 
+           <div *ngIf="isNullFileName == true">
+            <div class="alert alert-danger" role="alert"  style="margin-top: 2px;">*The ticket is required</div>
+          </div>
+        </div>
+        <div class="input-group mb-3" style="width: 40%;">
+            <div class="input-group-prepend">
+              
+            </div>
+            
+                <div class="form-group">
+                    <label for="file">Choose File</label>
+                    <input type="file"
+                           id="file"
+                           
+                           (change)="handleFileInput($event.target.files)">
+                
+              </div>
+          </div>
+          <div class="form-group">
+              <button class="btn btn-primary" type="submit"> Procesar</button>
+              
+            </div>
+        </form>
+        <mat-card [hidden] = "visible">
+            <mat-card-content>
+              <h2 class="example-h2">Proceso</h2>
+          
+              <section class="section">
+                <mat-progress-bar
+                    class="margin"
+                    
+                    [mode]="mode"
+                    [value]="value"
+                    [bufferValue]="bufferValue"
+                    [hidden] = "visible">
+                    
+                </mat-progress-bar>
+              </section>
+            </mat-card-content>
+        </mat-card>
+  </div>
+</div>
